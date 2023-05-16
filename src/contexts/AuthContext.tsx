@@ -1,6 +1,7 @@
 import React, {useState, createContext, ReactNode, useEffect} from "react";
 import { api } from "../services/api";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import  io , {Socket}  from "socket.io-client";
 
 type AuthContextData = {
     user: UserProps
@@ -9,6 +10,8 @@ type AuthContextData = {
     loading: boolean
     loadingAuth: boolean
     signOut: () => Promise<void>
+    socket: Socket | null;
+    isConnected: boolean
 }
 
 type UserProps = {
@@ -38,10 +41,17 @@ export function AuthProvider({children}: AuthProviderProps){
     });
     const [loadingAuth, setLoadingAuth] = useState(false);
     const [loading, setLoading] = useState(true)
+    const [isConnected, setIsConnected] = useState(false);
+    const [socket, setSocket] = useState<Socket | null>(null)
 
     const isAuthenticated = !!user.name // converte pra true ou falso
 
     useEffect(()=>{
+        const socket = io('http://192.168.1.100:3333');
+        setSocket(socket)
+        if(socket){
+            setIsConnected(true)
+        }
         async function getUser(){
             //pegar dados salvos no user
             const userInfo = await AsyncStorage.getItem('@pizzaria');
@@ -100,7 +110,7 @@ export function AuthProvider({children}: AuthProviderProps){
     }
 
     return(
-        <AuthContext.Provider value={{ user, isAuthenticated, signIn, loading, loadingAuth, signOut }}>
+        <AuthContext.Provider value={{ user, isAuthenticated, signIn, loading, loadingAuth, signOut, socket, isConnected }}>
             {children}
         </AuthContext.Provider>
     )

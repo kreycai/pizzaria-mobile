@@ -43,6 +43,10 @@ export default function Dashboard(){
                 <Text style={styles.buttonText}>Abrir mesa</Text>
             </TouchableOpacity>
 
+            <TouchableOpacity onPress={signOut}>
+                <Text>deslogar</Text>
+            </TouchableOpacity>
+
         </SafeAreaView>
     )
 }
