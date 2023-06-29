@@ -47,7 +47,8 @@ export function AuthProvider({children}: AuthProviderProps){
     const isAuthenticated = !!user.name // converte pra true ou falso
 
     useEffect(()=>{
-        const socket = io('http://192.168.1.100:3333');
+        const socket = io('https://api-portfolio-v3zq.onrender.com');
+        // const socket = io('https://api-portfolio-v3zq.onrender.com');
         setSocket(socket)
         if(socket){
             setIsConnected(true)

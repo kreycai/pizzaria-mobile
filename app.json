@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "pizzaria-mobile",
+    "name": "Pizzaria",
     "slug": "pizzaria-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/newicon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -19,12 +19,18 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/adaptive-icon1.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.kreycai.pizzariamobile"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "9f72a938-3e74-4a81-8643-29b00b9a74e4"
+      }
     }
   }
 }

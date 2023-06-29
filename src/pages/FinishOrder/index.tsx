@@ -40,7 +40,7 @@ export function FinishOrder(){
     return(
         <View style={styles.container}>
             <Text style={styles.alert}>Você deseja finalizar esse pedido ?</Text>
-            <Text style={styles.title}>{route?.params.number}</Text>
+            <Text style={styles.title}>Mesa {route?.params.number}</Text>
             <TouchableOpacity style={styles.button} onPress={handleFinishOrder}>
                 <Text style={styles.textButton}>Finalizar pedido</Text>
                 <Feather name="shopping-cart" size={20} color='#1d1d2e'/>

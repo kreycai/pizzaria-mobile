@@ -25,7 +25,8 @@ export default function SignIn(){
         <View style={styles.container} >
             <Image 
             style={styles.logo} 
-            source={require('../../assets/logo.png')}
+            // source={require('../../assets/logo.png')}
+            source={require('../../assets/pizzariaGrandeSemFundo.png')}
             />
             <View style={styles.inputContainer}>
                 <TextInput
@@ -64,7 +65,10 @@ const styles = StyleSheet.create({
         backgroundColor:'#1d1d2e'
     },
     logo:{
-        marginBottom:18
+
+        width: 250,
+        height: 150,
+        resizeMode: 'contain'
     },
     inputContainer:{
         width: '95%',

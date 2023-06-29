@@ -43,8 +43,8 @@ export default function Dashboard(){
                 <Text style={styles.buttonText}>Abrir mesa</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={signOut}>
-                <Text>deslogar</Text>
+            <TouchableOpacity style={styles.buttonOff} onPress={signOut}>
+                <Text style={styles.textOff}>Deslogar</Text>
             </TouchableOpacity>
 
         </SafeAreaView>
@@ -88,5 +88,18 @@ const styles = StyleSheet.create({
         fontSize: 18,
         color: '#101026',
         fontWeight: 'bold',
+    },
+    buttonOff:{
+        width: '20%',
+        height:25,
+        backgroundColor: '#FF3F4B',
+        borderRadius: 20,
+        marginVertical: 4,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    textOff:{
+        fontSize:12,
+        color:'#fff'
     }
 })
